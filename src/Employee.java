@@ -32,13 +32,7 @@ public class Employee {
 
     public Employee(String name, int department) {
         this.name = name;
-
-        //?? Доработать алгоритм проверки
-        if (department <= 5 && department > 0) {
-            this.department = department;
-        } else {
-            throw new IllegalArgumentException("Номер департамента должен быть в пределах 1-5");
-        }
+        setDepartmentWithCondition(department);
         this.id = keyCounter;
         keyCounter++;
     }
@@ -64,6 +58,13 @@ public class Employee {
     }
 
     public void setDepartment(int department) {
-        this.department = department;
+        setDepartmentWithCondition(department);
+    }
+    private void setDepartmentWithCondition(int department) {
+        if (department <= 5 && department > 0) {
+            this.department = department;
+        } else {
+            throw new IllegalArgumentException("Номер департамента должен быть в пределах 1-5");
+        }
     }
 }
