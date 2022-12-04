@@ -2,8 +2,8 @@ import java.util.Objects;
 
 public class Employee {
     private final String name;
-    private final int department;
-    private int salary;
+    private int department;
+    private double salary;
     private final int id;
     private static int keyCounter = 0;
 
@@ -51,7 +51,7 @@ public class Employee {
         return department;
     }
 
-    public int getSalary() {
+    public double getSalary() {
         return salary;
     }
 
@@ -59,7 +59,11 @@ public class Employee {
         return id;
     }
 
-    public void setSalary(int salary) {
+    public void setSalary(double salary) {
         this.salary = salary;
+    }
+
+    public void setDepartment(int department) {
+        this.department = department;
     }
 }
